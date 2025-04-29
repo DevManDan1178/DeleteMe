@@ -38,16 +38,10 @@ public class Main {
     public static void bubblesort(int[] nums, boolean ascending) {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = 0; j < nums.length - 1 - i; j++) {
-                if (ascending && nums[j] > nums[j + 1]) {
+                if ((ascending && nums[j] > nums[j + 1]) || (!ascending && nums[j] < nums[j + 1])) {
                     int t = nums[j + 1];
                     nums[j + 1] = nums[j];
                     nums[j] = t;
-
-                } else if (!ascending && nums[j] < nums[j + 1]) {
-                    int t = nums[j + 1];
-                    nums[j + 1] = nums[j];
-                    nums[j] = t;
-
                 }
             }
         }
