@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiPredicate;
@@ -12,7 +13,7 @@ public class Main {
     }
 
     /**
-     * Magical sorting function O(n^2) for int[]
+     * Magical sorting function O(n^2) for int[] | loops to compare entries and re-order them one by one
      *
      * @param nums int[] to sort
      */
@@ -30,7 +31,7 @@ public class Main {
     }
 
     /**
-     * Magical sorting function O(n^2) for int[]
+     * Magical sorting function O(n^2) for int[] | loops to compare entries and re-order them one by one
      *
      * @param nums      int[] to sort
      * @param ascending sort by ascending ? or not ?
@@ -48,7 +49,8 @@ public class Main {
     }
 
     /**
-     * Magical sorting function O(n^2) for int[]
+     * Magical sorting function O(n^2) for int[] | loops to brings smallest value to the front
+     *
      * @param nums int[] to sort
      */
     public static void selectionSort(int[] nums) {
@@ -62,6 +64,23 @@ public class Main {
             int temp = nums[minIndex];
             nums[minIndex] = nums[i];
             nums[i] = temp;
+        }
+    }
+
+    /**
+     * Magical sorting function O(n^2) for int[] | loops to insert each element into its correct position
+     *
+     * @param nums int[] to sort
+     */
+    public static void insertionSort(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            int key = nums[i];
+            int j = i - 1;
+            while (j >= 0 && nums[j] > key) {
+                nums[j + 1] = nums[j];
+                j--;
+            }
+            nums[j + 1] = key;
         }
     }
 }
