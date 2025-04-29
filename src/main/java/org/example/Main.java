@@ -10,7 +10,6 @@ public class Main {
         int[] nums = new int[]{3, 1, 5, 2, 1, 4};
         bubblesort(nums, false);
         System.out.println(Arrays.toString(nums));
-        e();
     }
 
     /**
