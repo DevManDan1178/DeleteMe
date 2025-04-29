@@ -20,9 +20,9 @@ public class Main {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = 0; j < nums.length - 1 - i; j++) {
                 if (nums[j] > nums[j + 1]) {
-                    int t = nums[j + 1];
+                    int temp = nums[j + 1];
                     nums[j + 1] = nums[j];
-                    nums[j] = t;
+                    nums[j] = temp;
 
                 }
             }
@@ -59,9 +59,9 @@ public class Main {
                     minIndex = j;
                 }
             }
-            int t = nums[minIndex];
+            int temp = nums[minIndex];
             nums[minIndex] = nums[i];
-            nums[i] = t;
+            nums[i] = temp;
         }
     }
 }
