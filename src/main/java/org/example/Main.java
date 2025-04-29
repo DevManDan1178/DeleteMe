@@ -7,7 +7,7 @@ import java.util.function.BiPredicate;
 public class Main {
     public static void main(String[] args) {
         int[] nums = new int[]{3, 1, 5, 2, 1, 4};
-        bubblesort(nums, true);
+        selectionSort(nums);
         System.out.println(Arrays.toString(nums));
     }
 
@@ -44,6 +44,24 @@ public class Main {
                     nums[j] = t;
                 }
             }
+        }
+    }
+
+    /**
+     * Magical sorting function O(n^2) for int[]
+     * @param nums int[] to sort
+     */
+    public static void selectionSort(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            int minIndex = nums.length - 1;
+            for (int j = i; j < nums.length; j++) {
+                if (nums[j] < nums[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            int t = nums[minIndex];
+            nums[minIndex] = nums[i];
+            nums[i] = t;
         }
     }
 }
