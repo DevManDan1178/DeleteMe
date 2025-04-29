@@ -8,8 +8,9 @@ import java.util.function.BiPredicate;
 public class Main {
     public static void main(String[] args) {
         int[] nums = new int[]{3, 1, 5, 2, 1, 4};
-        selectionSort(nums);
+        bubblesort(nums, false);
         System.out.println(Arrays.toString(nums));
+        e();
     }
 
     /**
@@ -24,7 +25,6 @@ public class Main {
                     int temp = nums[j + 1];
                     nums[j + 1] = nums[j];
                     nums[j] = temp;
-
                 }
             }
         }
@@ -39,7 +39,10 @@ public class Main {
     public static void bubblesort(int[] nums, boolean ascending) {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = 0; j < nums.length - 1 - i; j++) {
-                if ((ascending && nums[j] > nums[j + 1]) || (!ascending && nums[j] < nums[j + 1])) {
+                boolean condition = ascending ?
+                        nums[j] > nums[j + 1] :
+                        nums[j] < nums[j + 1];
+                if (condition) {
                     int t = nums[j + 1];
                     nums[j + 1] = nums[j];
                     nums[j] = t;
